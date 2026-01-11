@@ -75,22 +75,18 @@ See [ROADMAP.md](./ROADMAP.md) for upcoming features.
 
 ```php
 <?php
-class Counter {
-    private $count = 0;
+// Quick demonstration with string interpolation
+$message = "EdgePHP";
+$number = 42;
+$price = 19.99;
 
-    public function increment() {
-        $this->count++;
-    }
+// Using string interpolation (double quotes)
+echo "Welcome to $message!\n";
+echo "The answer is: $number\n";
+echo "Price: \$$price\n\n";
 
-    public function get() {
-        return $this->count;
-    }
-}
-
-$counter = new Counter();
-$counter->increment();
-$counter->increment();
-echo "Count: " . $counter->get(); // Count: 2
+// Compare with concatenation
+echo "Same result with concat: " . $message . " rocks!\n";
 ```
 
 ## Architecture

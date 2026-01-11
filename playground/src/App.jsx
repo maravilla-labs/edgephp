@@ -1996,8 +1996,9 @@ function App() {
             />
             Show AST
           </label>
-          <button 
-            onClick={() => setShowBenchmarks(true)} 
+{/* Benchmarks button hidden
+          <button
+            onClick={() => setShowBenchmarks(true)}
             style={{
               background: '#3b82f6',
               color: 'white',
@@ -2009,6 +2010,7 @@ function App() {
           >
             📊 Benchmarks
           </button>
+*/}
           <button 
             className="run-button" 
             onClick={compileCode}
@@ -2056,19 +2058,23 @@ function App() {
             {error && <div className="error">Error: {error}</div>}
             {!error && output}
           </div>
+{/* Performance comparison hidden - time shows in output
           {lastExecutionTime !== null && (
-            <PerformanceBaseline 
-              executionTime={lastExecutionTime} 
-              currentExample={currentExample} 
+            <PerformanceBaseline
+              executionTime={lastExecutionTime}
+              currentExample={currentExample}
             />
           )}
+*/}
         </div>
       </main>
       
-      <BenchmarkModal 
-        isOpen={showBenchmarks} 
-        onClose={() => setShowBenchmarks(false)} 
+{/* BenchmarkModal hidden
+      <BenchmarkModal
+        isOpen={showBenchmarks}
+        onClose={() => setShowBenchmarks(false)}
       />
+*/}
     </div>
   )
 }
