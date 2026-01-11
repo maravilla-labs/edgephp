@@ -4,6 +4,9 @@
 
 [![Deploy Playground](https://github.com/maravilla-labs/edgephp/actions/workflows/deploy-playground.yml/badge.svg)](https://github.com/maravilla-labs/edgephp/actions/workflows/deploy-playground.yml)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Status](https://img.shields.io/badge/Status-Experimental-orange.svg)]()
+
+> **Note**: This is an experimental project from [Maravilla Labs](https://github.com/maravilla-labs). It is intended for research and educational purposes only. **Not recommended for production use.**
 
 **EdgePHP** compiles PHP to WebAssembly, enabling PHP to run in browsers, edge workers, and serverless platforms with instant cold starts.
 
