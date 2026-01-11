@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edge PHP String Test</title>
+</head>
+<body>
+    <h1>Edge PHP String Variable Test</h1>
+    <pre id="output"></pre>
+    
+    <script>
+        async function runTest() {
+            const output = document.getElementById('output');
+            const logs = [];
+            
+            // Create imports
+            const imports = {
+                env: {
+                    print: (ptr, len) => {
+                        const memory = instance.exports.memory;
+                        const bytes = new Uint8Array(memory.buffer, ptr, len);
+                        const text = new TextDecoder().decode(bytes);
+                        logs.push(text);
+                    }
+                }
+            };
+            
+            try {
+                // Fetch and instantiate WASM
+                const response = await fetch('/test_strings.wasm');
+                const bytes = await response.arrayBuffer();
+                const { instance } = await WebAssembly.instantiate(bytes, imports);
+                
+                // Run the _start function
+                if (instance.exports._start) {
+                    instance.exports._start();
+                }
+                
+                output.textContent = logs.join('');
+            } catch (error) {
+                output.textContent = 'Error: ' + error.message;
+            }
+        }
+        
+        runTest();
+    </script>
+</body>
+</html>

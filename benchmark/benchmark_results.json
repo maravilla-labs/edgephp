@@ -1,0 +1,92 @@
+{
+  "timestamp": "2025-07-20T22:03:13.625Z",
+  "description": "PHP cold start vs EdgePHP WASM load + execution",
+  "tests": {
+    "minimal": {
+      "php": {
+        "execution": 0.000655055046081543,
+        "coldStart": 16.035204637500005,
+        "interpreterOverhead": 16.034549582453923
+      },
+      "edgephp": {
+        "execution": 0.00017066125000000237,
+        "instantiation": 0.5459088762499992,
+        "compilation": 0.05872758749999999,
+        "coldStart": 0.8224087999999998,
+        "wasmSize": 2886
+      }
+    },
+    "assignment": {
+      "php": {
+        "execution": 0.0009864568710327148,
+        "coldStart": 15.548872787499999,
+        "interpreterOverhead": 15.547886330628966
+      },
+      "edgephp": {
+        "execution": 0.0001887999999999995,
+        "instantiation": 0.5721760949999999,
+        "compilation": 0.06008876249999998,
+        "coldStart": 1.31556155,
+        "wasmSize": 2876
+      }
+    },
+    "arithmetic": {
+      "php": {
+        "execution": 0.004834234714508057,
+        "coldStart": 16.8038738,
+        "interpreterOverhead": 16.799039565285494
+      },
+      "edgephp": {
+        "execution": 0.0005868974999999982,
+        "instantiation": 0.6286097512500004,
+        "compilation": 0.06844280000000001,
+        "coldStart": 1.3632020249999999,
+        "wasmSize": 4264
+      }
+    },
+    "strings": {
+      "php": {
+        "execution": 0.003065764904022217,
+        "coldStart": 15.375824275,
+        "interpreterOverhead": 15.372758510095977
+      },
+      "edgephp": {
+        "execution": 0.0005291575000000016,
+        "instantiation": 0.5639047975000002,
+        "compilation": 0.06289017499999998,
+        "coldStart": 1.2555203000000001,
+        "wasmSize": 3803
+      }
+    },
+    "comprehensive": {
+      "php": {
+        "execution": 0.01047968864440918,
+        "coldStart": 14.031397849999996,
+        "interpreterOverhead": 14.020918161355587
+      },
+      "edgephp": {
+        "execution": 0.0010030187500000007,
+        "instantiation": 0.5949046937500002,
+        "compilation": 0.07452111249999997,
+        "coldStart": 1.548914575,
+        "wasmSize": 6856
+      }
+    }
+  },
+  "summary": {
+    "php": {
+      "execution": 0.004004240036010742,
+      "coldStart": 15.559034669999999,
+      "interpreterOverhead": 15.555030429963988
+    },
+    "edgephp": {
+      "execution": 0.0004957070000000004,
+      "coldStart": 1.2611214499999999,
+      "loadOverhead": 1.2606257429999999
+    },
+    "ratios": {
+      "execution": 0.12379552562834187,
+      "coldStart": 0.08105396489871051
+    }
+  }
+}

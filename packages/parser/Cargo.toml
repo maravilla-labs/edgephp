@@ -1,0 +1,11 @@
+[package]
+name = "edge-php-parser"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+nom = { workspace = true }
+thiserror = { workspace = true }
+serde = { workspace = true }

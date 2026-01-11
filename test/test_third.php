@@ -1,0 +1,1 @@
+    It's equivalent to <?php echo 'print this string' ?>.

@@ -1,0 +1,21 @@
+[package]
+name = "edge-php"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "edge-php"
+path = "src/main.rs"
+
+[dependencies]
+edge-php-parser = { path = "../parser" }
+edge-php-compiler = { path = "../compiler" }
+edge-php-runtime = { path = "../runtime" }
+clap = { version = "4.0", features = ["derive"] }
+anyhow = { workspace = true }
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+wasm-opt = "0.116.1"
+tempfile = "3.8.1"

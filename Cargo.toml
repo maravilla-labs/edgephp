@@ -1,0 +1,28 @@
+[workspace]
+members = [
+    "packages/parser",
+    "packages/compiler",
+    "packages/runtime",
+    "packages/cli",
+    "packages/wasm-bindings"
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Maravilla Labs, Operated by SOLUTAS GmbH, Switzerland"]
+license = "Apache-2.0"
+repository = "https://github.com/maravilla-labs/edgephp"
+description = "PHP-to-WebAssembly compiler for browsers, edge workers, and serverless platforms"
+keywords = ["php", "wasm", "webassembly", "compiler"]
+categories = ["compilers", "wasm"]
+
+[workspace.dependencies]
+nom = "7.1"
+wasm-encoder = "0.235"
+thiserror = "1.0"
+anyhow = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+wasm-bindgen = "0.2"

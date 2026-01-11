@@ -1,0 +1,9 @@
+
+test_minimal.wasm:	file format wasm 0x1
+
+Code Disassembly:
+
+0000af func[1]:
+ 0000b0: 41 00                      | i32.const 0
+ 0000b2: 42 00                      | i64.const 0
+ 0000b4: 44 00 00 00 00 00 00 00 00 | f64.const 0x0p+0

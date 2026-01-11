@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Benchmark Display</title>
+</head>
+<body>
+    <h1>Testing Benchmark Ratio Display</h1>
+    <div id="results"></div>
+    
+    <script>
+        // Test data from actual benchmark
+        const testRatio = 0.11683532804443601;
+        
+        // Current logic from modal
+        const isSlower = testRatio > 1;
+        const displayText1 = testRatio < 1 ? 
+            `${(1/testRatio).toFixed(1)}x faster` : 
+            `${testRatio.toFixed(1)}x slower`;
+            
+        // What it should be
+        const displayText2 = `${(1/testRatio).toFixed(1)}x faster`;
+        
+        document.getElementById('results').innerHTML = `
+            <p>Raw ratio: ${testRatio}</p>
+            <p>Current display: ${displayText1}</p>
+            <p>Should display: ${displayText2}</p>
+            <p>Explanation: EdgePHP takes ${(testRatio * 100).toFixed(1)}% of PHP's time</p>
+        `;
+    </script>
+</body>
+</html>

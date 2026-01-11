@@ -1,0 +1,1 @@
+<?php echo 'While this is going to be parsed.' ?>
